@@ -9,3 +9,4 @@ torch
 httpx
 python-multipart
 types-setuptools
+fastapi-jsonrpc

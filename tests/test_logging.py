@@ -1,6 +1,6 @@
 import logging
-from hoh_mcp.utils.logging import get_logger
-from hoh_mcp.config import settings
+from HoH_parser.utils.logging import get_logger
+from HoH_parser.config import settings
 import importlib
 import sys
 

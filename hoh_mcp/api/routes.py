@@ -1,6 +1,6 @@
 from fastapi import APIRouter, UploadFile, File, Query
-from hoh_mcp.core.parser import parse_python_file
-from hoh_mcp.core.models import MCPFile
+from HoH_parser.core.parser import parse_python_file
+from HoH_parser.core.models import MCPFile
 import tempfile
 
 router = APIRouter()

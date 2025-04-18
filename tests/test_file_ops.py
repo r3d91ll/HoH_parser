@@ -1,6 +1,6 @@
 import os
 import tempfile
-from hoh_mcp.utils.file_ops import list_py_files
+from HoH_parser.utils.file_ops import list_py_files
 
 def test_list_py_files_basic():
     with tempfile.TemporaryDirectory() as tmpdir:

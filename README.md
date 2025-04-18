@@ -126,7 +126,7 @@ For batch operations, debugging, or scripting.
 ## Example Directory Structure
 
 ```bash
-HoH_MCP_Server/
+HoH_parser_Server/
 ├── __init__.py
 ├── main.py           # API entrypoint (FastAPI app)
 ├── parser.py         # Core parsing logic (AST/LibCST)

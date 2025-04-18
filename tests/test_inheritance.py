@@ -14,7 +14,7 @@ class Child(Base):
     test_file = tmp_path / "inheritance_sample.py"
     test_file.write_text(code)
 
-    from hoh_mcp.core.parser import parse_python_file
+    from HoH_parser.core.parser import parse_python_file
     mcp_file = parse_python_file(str(test_file))
     # Look for the inheritance relationship
     inherits = [rel for rel in mcp_file.relationships if rel.type == "inherits"]

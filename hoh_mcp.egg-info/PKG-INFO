@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: hoh_mcp
+Version: 0.1.0
+Summary: Hammer of Hephaestus Model Context Protocol Server
+Author: Your Name
+Requires-Python: >=3.11
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary

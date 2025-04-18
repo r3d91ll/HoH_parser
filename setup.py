@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="hoh_mcp",
+    name="HoH_parser",
     version="0.1.0",
     description="Hammer of Hephaestus Model Context Protocol Server",
     author="Your Name",

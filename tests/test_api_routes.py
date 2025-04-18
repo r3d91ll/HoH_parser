@@ -2,7 +2,7 @@ import os
 import tempfile
 import pytest
 from fastapi.testclient import TestClient
-from hoh_mcp.api.routes import router
+from HoH_parser.api.routes import router
 from fastapi import FastAPI
 
 app = FastAPI()
