@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+mypy
+pytest
+python-dotenv
+numpy
+torch
+httpx
+python-multipart
+types-setuptools
