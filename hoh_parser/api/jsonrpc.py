@@ -63,9 +63,13 @@ def symbol_table(filepath: str) -> dict[str, Any]:
     result = parse_python_file(filepath)
     return cast(dict[str, Any], result.model_dump())
 
+from hoh_parser.utils.logging import get_logger
+
+logger = get_logger("hoh_parser.api.jsonrpc")
+
 def get_jsonrpc_router() -> Entrypoint:
     jsonrpc_router = Entrypoint('/')  # Mount at root of /jsonrpc
-    print("DEBUG: Registered methods:", [name for name, _ in _method_registry])
+    logger.debug("Registered methods: %s", [name for name, _ in _method_registry])
     for name, func in _method_registry:
         jsonrpc_router.method(name=name)(func)
     return jsonrpc_router
