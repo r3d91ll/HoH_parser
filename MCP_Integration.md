@@ -23,6 +23,7 @@
   - All tests pass and mypy reports no issues in server code.
 
 **Progress Summary:**
+
 - The server now fully supports JSON-RPC 2.0 for all communication.
 - REST endpoints have been migrated.
 - MCP-compliant health and capability methods are implemented.
