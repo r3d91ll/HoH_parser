@@ -1,6 +1,6 @@
 import logging
-from HoH_parser.utils.logging import get_logger
-from HoH_parser.config import settings
+from hoh_parser.utils.logging import get_logger
+from hoh_parser.config import settings
 import importlib
 import sys
 

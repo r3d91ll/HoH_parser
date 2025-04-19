@@ -1,8 +1,8 @@
 import tempfile
-from HoH_parser.core.parser import parse_python_file
+from hoh_parser.core.parser import parse_python_file
 import os
 import json
-from HoH_parser.core.models import MCPFile
+from hoh_parser.core.models import MCPFile
 
 def test_parse_simple_function() -> None:
     code = (
@@ -22,7 +22,7 @@ def test_parse_simple_function() -> None:
 
 def test_parse_real_code_file() -> None:
     """Test parsing a real code file (parser.py itself)"""
-    parser_path = os.path.join(os.path.dirname(__file__), "../HoH_parser/core/parser.py")
+    parser_path = os.path.join(os.path.dirname(__file__), "../hoh_parser/core/parser.py")
     parser_path = os.path.abspath(parser_path)
     result = parse_python_file(parser_path)
     print("\nFull MCPFile symbol output for parser.py:")
@@ -221,7 +221,7 @@ class Foo:
     def cm(cls): pass
 '''
     import ast
-    from HoH_parser.core.parser import extract_relationships
+    from hoh_parser.core.parser import extract_relationships
 
     tree = ast.parse(code)
     rels = extract_relationships(tree, "testfile.py")

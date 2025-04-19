@@ -3,14 +3,14 @@
 
 ## What's New
 
-### Centralized Configuration (HoH_parser/config.py)
+### Centralized Configuration (hoh_parser/config.py)
 
 - Uses Pydantic’s BaseSettings for type-safe config.
 - Loads from environment variables and .env file (dotenv).
 - Example config: debug mode, log level, ArangoDB connection settings.
-- Access everywhere as from HoH_parser.config import settings.
+- Access everywhere as from hoh_parser.config import settings.
 
-### Centralized Logging (HoH_parser/utils/logging.py)
+### Centralized Logging (hoh_parser/utils/logging.py)
 
 - All modules use get_logger() for consistent, structured logs.
 - Log level and debug mode are controlled by config.
@@ -26,7 +26,7 @@ To adjust log level or debug mode, set LOG_LEVEL or DEBUG in your .env file or e
 Import and use the logger in any module:
 
 ```python
-from HoH_parser.utils.logging import get_logger
+from hoh_parser.utils.logging import get_logger
 logger = get_logger(__name__)
 logger.info("Something happened")
 ```
@@ -77,7 +77,7 @@ def extract_symbols(node, parent=None):
 Example: Directory Parsing Function
 
 ```python
-from HoH_parser.utils.file_ops import list_py_files
+from hoh_parser.utils.file_ops import list_py_files
 
 def parse_python_directory(directory: str) -> List[MCPFile]:
     files = list_py_files(directory)

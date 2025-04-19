@@ -17,7 +17,8 @@
   - Responses and errors now follow the JSON-RPC 2.0 spec.
 - [x] Add capability negotiation (if not present).
   - Added MCP-compliant `get_capabilities` and `health_check` JSON-RPC methods.
-- [ ] Update client(s) and documentation to reflect protocol changes.
+- [x] Update client(s) and documentation to reflect protocol changes.
+  - All client and documentation references now use JSON-RPC 2.0 endpoints and protocol.
 - [x] Regression test all endpoints.
   - All tests pass and mypy reports no issues in server code.
 
@@ -26,6 +27,7 @@
 - REST endpoints have been migrated.
 - MCP-compliant health and capability methods are implemented.
 - Type checking is clean (mypy passes with no errors).
+- All automated tests pass as of 2025-04-18, confirming a successful migration.
 
 ---
 

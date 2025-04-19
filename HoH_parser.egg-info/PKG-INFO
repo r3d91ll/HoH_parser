@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: HoH_parser
+Version: 0.1.0
+Summary: Hammer of Hephaestus ParserModel Context Protocol Server
+Author: Todd W. Bucy
+Author-email: todd@bucy-medrano.me
+Requires-Python: >=3.11
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-python
+Dynamic: summary

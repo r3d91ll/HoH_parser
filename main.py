@@ -1,12 +1,13 @@
+import hoh_parser.api.jsonrpc
 from fastapi import FastAPI
-from HoH_parser.api.jsonrpc import jsonrpc_router
-from HoH_parser.config import settings
-from HoH_parser.utils.logging import get_logger
+from hoh_parser.api.jsonrpc import get_jsonrpc_router
+from hoh_parser.config import settings
+from hoh_parser.utils.logging import get_logger
 
-logger = get_logger("HoH_parser.main")
+logger = get_logger("hoh_parser.main")
 
 app = FastAPI(title="Hammer of Hephaestus MCP Server")
-app.include_router(jsonrpc_router)
+app.mount("/jsonrpc", get_jsonrpc_router())
 
 @app.on_event("startup")
 def startup_event() -> None:

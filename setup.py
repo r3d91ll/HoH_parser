@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="HoH_parser",
+    name="hoh_parser",
     version="0.1.0",
     description="Hammer of Hephaestus ParserModel Context Protocol Server",
     author="Todd W. Bucy",

@@ -1,6 +1,6 @@
 import logging
 from typing import Optional
-from HoH_parser.config import settings
+from hoh_parser.config import settings
 
 def get_logger(name: Optional[str] = None) -> logging.Logger:
     logger = logging.getLogger(name)

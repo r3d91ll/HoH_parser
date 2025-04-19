@@ -106,14 +106,46 @@ Use Python dataclasses or Pydantic models for type safety and validation.
 
 ### API Layer (Service)
 
-Exposes endpoints (REST/gRPC) for:
+**All API communication is now via JSON-RPC 2.0 at `/jsonrpc/`.**
 
 - Parsing files/directories
 - Querying symbol tables
 - Getting code object details
-- (Optionally) live code watching or incremental parsing
-Built with FastAPI, Flask, or similar.
+- Health and capability checks (MCP-compliant)
 
+Built with FastAPI and [fastapi-jsonrpc](https://github.com/liyasthomas/fastapi-jsonrpc).
+
+#### Example: JSON-RPC Request (with curl)
+
+Parse a file (base64-encoded content):
+
+```bash
+curl -X POST http://localhost:8000/jsonrpc/ \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "parse_file",
+    "params": {"filename": "foo.py", "content_b64": "<base64-encoded-content>"},
+    "id": 1
+  }'
+```
+
+Get capabilities:
+
+```bash
+curl -X POST http://localhost:8000/jsonrpc/ \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "get_capabilities",
+    "params": {},
+    "id": 2
+  }'
+```
+
+See `MCP_Integration.md` for more details about the protocol and available methods.
+
+**Note:** The previous REST API has been fully replaced by JSON-RPC 2.0 endpoints.
 ### Ingestion/Export Layer
 
 Takes MCP objects and inserts them into ArangoDB, or exports as JSON, etc.
@@ -126,7 +158,7 @@ For batch operations, debugging, or scripting.
 ## Example Directory Structure
 
 ```bash
-HoH_parser_Server/
+hoh_parser_Server/
 ├── __init__.py
 ├── main.py           # API entrypoint (FastAPI app)
 ├── parser.py         # Core parsing logic (AST/LibCST)
@@ -187,6 +219,12 @@ def parse_endpoint(path: str):
 - Separation of concerns: Each part is testable and replaceable.
 - Extensible: Add new endpoints, language support, or output formats.
 - Integrates with IDEs, CI/CD, and other tools: Just call the API or CLI.
+
+## Development & Testing Status
+
+- All endpoints are now JSON-RPC 2.0-compliant as of 2025-04-18.
+- MCP-compliant `health_check` and `get_capabilities` methods are implemented.
+- All automated tests and mypy pass as of 2025-04-18.
 
 ## Next Steps
 
